@@ -1,0 +1,17 @@
+package com.food.Model;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
+@Data
+@Getter
+@Setter
+@AllArgsConstructor
+public class ContactInformation {
+    private String email;
+    private String mobile;
+    private String twitter;
+    private String instagram;
+}
