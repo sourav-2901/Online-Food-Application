@@ -30,7 +30,10 @@ public class RestaurantServiceImpl implements RestaurantService {
 
     @Override
     public Restaurant createRestaurant(CreateRestaurantReq restaurantReq, User user) {
-        Address address=addressRepository.save(restaurantReq.getAddress());
+        Address address=new Address();
+        if(null!=restaurantReq.getAddress()) {
+             address = addressRepository.save(restaurantReq.getAddress());
+        }
         Restaurant restaurant=new Restaurant();
         restaurant.setAddress(address);
         restaurant.setContactInformation(restaurantReq.getContactInformation());

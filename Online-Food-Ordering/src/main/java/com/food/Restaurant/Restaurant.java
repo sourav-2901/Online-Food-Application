@@ -3,6 +3,8 @@ package com.food.Restaurant;
 import com.food.Model.*;
 import jakarta.persistence.Id;
 import lombok.*;
+import org.bson.types.ObjectId;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -12,9 +14,10 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Document(collection = "Restaurant")
 public class Restaurant {
     @Id
-    private Long id;
+    private ObjectId id;
     private User owner;
     private String name;
     private String cuisineType;
